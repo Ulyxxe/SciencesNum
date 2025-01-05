@@ -73,30 +73,14 @@ The results include:
 
 ---
 
-## 4. How to Run the Simulation
 
-1. Ensure you have Python installed.
-2. Install required libraries:
-   ```bash
-   pip install numpy matplotlib
-   ```
-3. Run the script:
-   ```bash
-   python einsteinEffectSimuV2.py
-   ```
-4. The script will display:
-   - Calculated gravitational redshifts.
-   - Graphical representations of the orbits for both experiments.
-
----
-
-## 5. Conclusion
+## 4. Conclusion
 
 This project demonstrates the universal applicability of Einstein’s theory of general relativity, from Earth’s orbit to the environment near a supermassive black hole. By simulating these two real-world cases, we can see how well theoretical predictions match experimental data, highlighting the precision of general relativity in explaining gravitational phenomena.
 
 ---
 
-## 6. References
+## 5. References
 - ESA Galileo Satellite Experiment (2018)
 - GRAVITY Collaboration: Observation of S2 near Sagittarius A* (2018)
 - Einstein's General Theory of Relativity
