@@ -31,10 +31,9 @@ In 2018, two Galileo GPS satellites were accidentally placed into **elliptical o
 #### Simulation:
 1. Compute the gravitational redshift at the **closest point (perigee)** and the **farthest point (apogee)** of the satellite's orbit.
 2. Use the gravitational potential formula:
-   
-   \[
+   $$
    U = - \frac{GM}{r}
-   \]
+   $$
 
    where:
    - \( G \) is the gravitational constant
@@ -43,9 +42,9 @@ In 2018, two Galileo GPS satellites were accidentally placed into **elliptical o
 
 3. Calculate the frequency shift using:
 
-   \[
+   $$
    \frac{\Delta f}{f} = \frac{\Delta U}{c^2}
-   \]
+   $$
 
    where \( c \) is the speed of light.
 
