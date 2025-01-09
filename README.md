@@ -43,9 +43,7 @@ In 2018, two Galileo GPS satellites were accidentally placed into **elliptical o
 
 3. Calculate the frequency shift using:
 
-   $$
-   \frac{\Delta f}{f} = \frac{\Delta U}{c^2}
-   $$
+   $$  \frac{\Delta f}{f} = \frac{\Delta U}{c^2} $$
 
    where \( c \) is the speed of light.
 
