@@ -1,0 +1,41 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant, m^3 kg^-1 s^-2
+M_E = 5.972e24   # Mass of the Earth, kg
+c = 3.0e8        # Speed of light, m/s
+R_E = 6371000    # Earth's radius, m
+
+# Satellite orbital parameters
+# Semi-major axis (m), eccentricity
+satellite_params = {
+    "Galileo_SAT1": {"a": 27900e3, "e": 0.162},
+    "Galileo_SAT2": {"a": 27800e3, "e": 0.159}
+}
+
+# Function to compute gravitational redshift at a given distance r
+def gravitational_redshift(r):
+    return - (G * M_E) / (r * c**2)
+
+# Function to compute instantaneous radius during elliptical orbit
+def radius_at_true_anomaly(a, e, theta):
+    return a * (1 - e**2) / (1 + e * np.cos(theta))
+
+# Compute redshift over one orbital period
+theta = np.linspace(0, 2 * np.pi, 1000)  # True anomaly angles
+
+plt.figure(figsize=(10, 6))
+for sat, params in satellite_params.items():
+    a = params["a"]
+    e = params["e"]
+    r = radius_at_true_anomaly(a, e, theta)
+    z = gravitational_redshift(r)
+    plt.plot(theta, z, label=f"{sat}: a={a/1e3} km, e={e}")
+
+plt.title("Gravitational Redshift for Galileo Satellites")
+plt.xlabel("True Anomaly (radians)")
+plt.ylabel("Gravitational Redshift (dimensionless)")
+plt.legend()
+plt.grid()
+plt.show()
