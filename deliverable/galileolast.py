@@ -73,10 +73,10 @@ class GalileoRedshiftSimulation:
         """Plot simulation results comparing both orbits."""
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
         
-        # Convert times to days for plotting
+      
         times_days = times / (24*3600)
         
-        # Plot orbital radii
+       
         ax1.plot(times_days, (radii_elliptical-np.mean(radii_elliptical))/1000, 'b-', 
                 label='Elliptical (Actual)')
         ax1.plot(times_days, (radii_circular-np.mean(radii_circular))/1000, 'g--', 
@@ -87,7 +87,7 @@ class GalileoRedshiftSimulation:
         ax1.grid(True)
         ax1.legend()
         
-        # Plot frequency shifts
+        
         ax2.plot(times_days, shifts_elliptical*1e12, 'r-', 
                 label='Elliptical (Actual)')
         ax2.plot(times_days, shifts_circular*1e12, 'm--', 
@@ -102,16 +102,16 @@ class GalileoRedshiftSimulation:
         return fig
 
 def main():
-    # Create simulation instance
+   
     sim = GalileoRedshiftSimulation()
     
-    # Run simulation for 10 days
+    
     times, radii_elliptical, shifts_elliptical, radii_circular, shifts_circular = sim.simulate(duration_days=10)
     
-    # Plot results
+   
     fig = sim.plot_results(times, radii_elliptical, shifts_elliptical, radii_circular, shifts_circular)
     
-    # Calculate key statistics
+    
     shift_amplitude_elliptical = (np.max(shifts_elliptical) - np.min(shifts_elliptical)) * 1e12
     shift_amplitude_circular = (np.max(shifts_circular) - np.min(shifts_circular)) * 1e12
     
@@ -119,9 +119,9 @@ def main():
     print(f"Elliptical orbit peak-to-peak shift: {shift_amplitude_elliptical:.2f} parts per trillion")
     print(f"Circular orbit peak-to-peak shift: {shift_amplitude_circular:.2f} parts per trillion")
     
-    # Compare with experimental results
-    experimental_uncertainty = 0.19  # parts per trillion (from 2018 paper)
-    theoretical_prediction = 4.72    # parts per trillion (peak-to-peak)
+   
+    experimental_uncertainty = 0.19  
+    theoretical_prediction = 4.72   
     
     print("\nComparison with experimental results:")
     print(f"Theoretical prediction: {theoretical_prediction:.2f} parts per trillion")
